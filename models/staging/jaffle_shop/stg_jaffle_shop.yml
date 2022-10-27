@@ -2,18 +2,23 @@ version: 2
 
 models:
   - name: stg_customer
+    description: cutomsers data from raw db
     columns:
       - name: customer_id
+        description: Primary key of customer table
         tests:
           - not_null
           - unique
   - name: stg_order
+    description: order data of jaffle shop db
     columns:
       - name: order_id
+        description: Primary key of orders table
         tests:
           - unique
           - not_null
       - name: status
+        description: "{{ doc('order_status') }}"
         tests:
           - accepted_values:
               values:

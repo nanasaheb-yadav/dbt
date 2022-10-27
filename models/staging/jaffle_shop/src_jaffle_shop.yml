@@ -2,12 +2,16 @@ version: 2
 
 sources:
   - name: jaffle_shop
+    description: Postgresql DB test for DBT project
     database: raw
     schema: jaffle_shop
     tables:
       - name: customers
+        description: customer table of raw db 
       - name: orders
+        description: orders table from jaffle shop
         loaded_at_field: _etl_loaded_at
+        description: testing data for datetime using freshness of data in db table
         freshness:
           warn_after: { count: 12, period: hour}
           error_after: {count: 78, period: hour}
