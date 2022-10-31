@@ -7,7 +7,7 @@ with payments as (
         status,
 
         -- amount is stored in cents, convert it to dollars
-        amount / 100 as amount,
+        {{cent_to_dollars('amount')}} as amount,
         created as created_at
 
     from {{source('jaffle_shop', 'payment')}}
