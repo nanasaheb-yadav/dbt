@@ -9,3 +9,4 @@ with orders as (
 )
 
 select * from orders
+{{limit_data_by_days('order_date', 1000)}}
